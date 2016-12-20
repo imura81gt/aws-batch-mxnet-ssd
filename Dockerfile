@@ -21,6 +21,8 @@ RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet 
   sed -i 's/EXTRA_OPERATORS =$/EXTRA_OPERATORS = example\/ssd\/operator/g' config.mk && \
   make -j"$(nproc)"
 
+RUN pip install awscli
+
 ENV PYTHONPATH /root/mxnet/python
 
 WORKDIR /root/mxnet
