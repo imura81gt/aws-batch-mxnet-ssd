@@ -8,9 +8,13 @@ RUN apt-get update && apt-get install -y \
   python-dev \
   python-numpy \
   python-setuptools \
+  python-opencv \
+  python-matplotlib \
   wget \
   python-pip \
   unzip
+
+RUN pip install easydict
 
 RUN cd /root && git clone --recursive https://github.com/dmlc/mxnet && cd mxnet && \
   cp make/config.mk . && \
